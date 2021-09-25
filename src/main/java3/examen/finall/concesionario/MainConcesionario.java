@@ -1,6 +1,7 @@
 package examen.finall.concesionario;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -82,11 +83,34 @@ public class MainConcesionario {
 			break;
 			
 		case "2":
-			
+			System.out.println("Ingrese numero de la placa del auto");
+			String placacomp = teclado.nextLine();
+			boolean busqueda = placacomp.contains(autosNac.getPlacaNac());
+			if (busqueda==true) {
+				System.out.println(autosNac.toString());
+			}
+			else if(busqueda==false) {
+				System.out.println("No se encuentra el auto");
+			}
 			break;
 		case "3":
+			System.out.println("Ingrese el numero de placa del auto: ");
+			placacomp = teclado.nextLine();
+			busqueda = placacomp.contains(autosNac.getPlacaNac());
+			if (busqueda==true) {
+				System.out.println("Ingrese el nuevo kilometraje: ");
+				int kilometraje = tecladoint.nextInt();
+				autosNac.setKilometrajeNac(kilometraje);
+			}
+			else if(busqueda==false) {
+				System.out.println("No se encuentra el auto");
+			}
 			break;
 		case "4":
+			Arrays.sort(autosImp);
+			System.out.println("Reporte de autos: ");
+			System.out.println(Arrays.ToString(autosImp));
+
 			break;
 		default:
 			System.out.println("Ingrese una opcion valida");

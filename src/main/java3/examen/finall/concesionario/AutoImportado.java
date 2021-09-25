@@ -1,6 +1,6 @@
 package examen.finall.concesionario;
 
-public class AutoImportado {
+public class AutoImportado implements Comparable<AutoImportado> {
 
 	public String marcaExp;
 	public String modeloExp;
@@ -48,11 +48,20 @@ public class AutoImportado {
 	public void setKilometrajeExp(int kilometrajeExp) {
 		this.kilometrajeExp = kilometrajeExp;
 	}
+	public int compareTo(AutoImportado o) {
+
+		if (this.kilometrajeExp > o.getKilometrajeExp()) {
+			return 1;
+		} else if (this.kilometrajeExp == o.getKilometrajeExp()) {
+			return 0;
+		} else {
+			return -1;
+		}
+	}
 
 	@Override
 	public String toString() {
-		return "Marca: " + marcaExp + " - Modelo: " + modeloExp + ", anioPublicExp=" + anioPublicExp
-				+ ", placaExp=" + placaExp + ", kilometrajeExp=" + kilometrajeExp + "]";
+		return "Marca: " + marcaExp + " - Modelo: " + modeloExp + " - Placa: " + placaExp + " - Kilometraje " + kilometrajeExp;
 	}
 	
 

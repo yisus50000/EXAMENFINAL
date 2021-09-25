@@ -1,6 +1,7 @@
 package examen.finall.concesionario;
 
-public class AutoNacional {
+
+public class AutoNacional implements Comparable<AutoNacional> {
 
 	public String marcaNac;
 	public String modeloNac;
@@ -49,7 +50,16 @@ public class AutoNacional {
 	public void setKilometrajeNac(int kilometrajeNac) {
 		this.kilometrajeNac = kilometrajeNac;
 	}
+	public int compareTo(AutoNacional o) {
 
+		if (this.kilometrajeNac > o.getKilometrajeNac()) {
+			return 1;
+		} else if (this.kilometrajeNac == o.getKilometrajeNac()) {
+			return 0;
+		} else {
+			return -1;
+		}
+	}
 	@Override
 	public String toString() {
 		return "Marca: " + marcaNac + " - Modelo: " + modeloNac + " - Placa: " + placaNac + " - Kilometraje: " + kilometrajeNac;
