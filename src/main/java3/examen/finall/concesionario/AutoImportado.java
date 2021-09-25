@@ -49,4 +49,11 @@ public class AutoImportado {
 		this.kilometrajeExp = kilometrajeExp;
 	}
 
+	@Override
+	public String toString() {
+		return "Marca: " + marcaExp + " - Modelo: " + modeloExp + ", anioPublicExp=" + anioPublicExp
+				+ ", placaExp=" + placaExp + ", kilometrajeExp=" + kilometrajeExp + "]";
+	}
+	
+
 }

@@ -49,4 +49,10 @@ public class AutoNacional {
 	public void setKilometrajeNac(int kilometrajeNac) {
 		this.kilometrajeNac = kilometrajeNac;
 	}
+
+	@Override
+	public String toString() {
+		return "Marca: " + marcaNac + " - Modelo: " + modeloNac + " - Placa: " + placaNac + " - Kilometraje: " + kilometrajeNac;
+	}
+	
 }
